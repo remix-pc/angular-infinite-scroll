@@ -1,0 +1,14 @@
+<div
+      class="search-results"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="500"
+      (scrolled)="onScroll()"
+      [scrollWindow]="false"
+    >
+    <div class="data-card" *ngFor="let item of students">
+      <p>{{item.id}} - {{item.first_name}} {{item.last_name}}</p>
+      <p>{{item.dsClass}}</p>
+</div>
+<div *ngIf="isLoading">Loading...</div>
+</div>
